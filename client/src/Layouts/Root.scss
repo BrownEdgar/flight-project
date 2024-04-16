@@ -1,0 +1,30 @@
+@import "../sass/variables";
+@import "../sass/mixins";
+
+.Root {
+  display: grid;
+  grid-template-rows: 80px 1fr 120px;
+  font-family: $main-font-family;
+  min-height: max(100vh, 600px);
+  max-width: 1920px;
+
+  gap: 30px;
+  margin: 0 auto;
+  .container {
+    @include containerRools();
+    .btn {
+      @include ButtonRools();
+      &__green {
+        background-color: #44bd32 !important;
+        color: #fff;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2em;
+  border-top: 3px solid teal;
+  text-align: center;
+}

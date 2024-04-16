@@ -1,0 +1,15 @@
+.Cities {
+  max-width: 900px;
+  margin: 0 auto;
+  &__title {
+    font-size: 44px;
+    margin: 30px auto 0;
+    letter-spacing: 2px;
+  }
+  &__header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 12px;
+  }
+}
