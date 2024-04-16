@@ -1,7 +1,8 @@
-class UsersServices{
-  constructor(models){
-    this.models = models 
+class UsersServices {
+  constructor(models) {
+    this.models = models
   }
+
   async saveUsers(body) {
     const users = new this.models.locals.users.create({ ...body });
     return users;
@@ -9,10 +10,10 @@ class UsersServices{
 
   async getAllUsers() {
     const users = await this.models.users.findAll({
-        attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password'] },
     });
     return users;
-}
+  }
 
 }
 

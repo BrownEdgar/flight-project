@@ -3,10 +3,9 @@ const router = express.Router();
 
 const FlightController = require('../Controllers/FlightController');
 const getDocumentByField = require('../Middlewares/getDocumentByField');
-const controller =  new FlightController()
+const controller = new FlightController()
 
-router.post('/',getDocumentByField,controller.saveFlight)
-
+router.post('/', getDocumentByField, controller.saveFlight)
 
 module.exports = router
 

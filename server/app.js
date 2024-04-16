@@ -27,10 +27,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
-cors({
-  origin:"*"
-})
-
 
 app.use("/uploads", express.static('uploads'))
 app.use("/", indexRouter);
@@ -64,7 +60,7 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   res.status(err.status || 500);
-  res.json({err:err.message});
+  res.json({ err: err.message });
 });
 
 module.exports = app;

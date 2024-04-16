@@ -2,8 +2,8 @@ const { Sequelize, DataTypes } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
 
-const User = function (sequelize){
-return  sequelize.define('users', {
+const User = function (sequelize) {
+  return sequelize.define('users', {
     username: {
       type: DataTypes.STRING(100),
       allowNull: false,
@@ -35,9 +35,9 @@ return  sequelize.define('users', {
     }
   });
 }
- 
+
 User.login = async function ({ username, password }) {
-  const user = await this.findOne({ where: { username:username } });
+  const user = await this.findOne({ where: { username: username } });
   if (user) {
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (isValidPassword) {
