@@ -24,7 +24,7 @@ module.exports = function (sequelize) {
       }
     },
     status: {
-      type: DataTypes.ENUM('delayed', 'landed', 'arrived'),
+      type: DataTypes.ENUM('delayed', 'on-time', 'arrived'),
       allowNull: false,
       unique: true
     },

@@ -9,6 +9,7 @@ class CityServices {
   }
 
   async saveCity(body) {
+    console.log(body)
     const city = await this.models.city.create({ ...body });
     return city;
   }

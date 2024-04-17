@@ -12,6 +12,7 @@ export default function CityTable({ data }) {
             <th>City</th>
             <th>Code</th>
             <th>change</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
@@ -21,8 +22,13 @@ export default function CityTable({ data }) {
                 <td>{city.id}</td>
                 <td>{city.name}</td>
                 <td>{city.code}</td>
-                <td>
+                <td className='change'>
                   <button className='btn btn__change'>change</button>
+                </td>
+                <td className='delete'>
+                  <button className='btn btn__delete'>
+                    <i className="bi bi-x-lg"></i>
+                  </button>
                 </td>
               </tr>
             )
