@@ -3,7 +3,7 @@ class CityServices {
     this.models = models;
   }
 
-  async getAllCities(body) {
+  async getAllCities() {
     const city = await this.models.city.findAll();
     return city;
   }
