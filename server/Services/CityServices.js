@@ -3,7 +3,7 @@ class CityServices {
     this.models = models;
   }
 
-  async getAllCities(body) {
+  async getAllCities() {
     const city = await this.models.city.findAll();
     return city;
   }
@@ -21,6 +21,19 @@ class CityServices {
       },
       attributes: ['id']
     });
+
+    return city.dataValues;
+  }
+
+  async changeCity(body, params) {
+    const city = await this.models.city.update(
+      { name: body.name },
+      {
+        where: {
+          id: params.id,
+        },
+      },
+    );
 
     return city.dataValues;
   }
