@@ -2,6 +2,16 @@ const {Errors,ErrorsMessages} = require("../Errors/Errors")
 
 
 class CompanyController{
+
+  async getAllCompany(req, res) {
+    try {
+      const company = await req.app.locals.services.company.getAllCompany();
+      res.status(200).json(company);
+    } catch (error) {
+      Errors.saveError(res,ErrorsMessages.SERVER_ERROR)
+    }
+  }
+
   async saveCompany(req, res) {
     const { body } = req;
     body.logo = req?.file?.path;
