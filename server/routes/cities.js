@@ -5,8 +5,8 @@ const CityController = require('../Controllers/CityController');
 const controller = new CityController()
 
 router.get("/", controller.getAllCities);
-
 router.post("/", controller.saveCity);
+router.patch("/:id", controller.changeCity);
 
 
 module.exports = router;

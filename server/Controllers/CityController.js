@@ -8,13 +8,12 @@ class CityController {
       const cities = await req.app.locals.services.city.getAllCities();
       res.status(200).json(cities);
     } catch (error) {
-      Errors.saveError(res,ErrorsMessages.SERVER_ERROR)
+      Errors.saveError(res, error.message)
     }
-  }
+}
 
   async saveCity(req, res) {
     const { body } = req;
-
     try {
       const cities = await req.app.locals.services.city.saveCity(body);
       res.status(201).json(cities);
@@ -22,6 +21,17 @@ class CityController {
       Errors.saveError(res,ErrorsMessages.SERVER_ERROR)
     }
   }
+
+  async changeCity(req, res) {
+    const {body, params} = req;
+    try {
+      const city = await req.app.locals.services.city.changeCity(body, params);
+      res.status(201).json(city);
+    } catch (error) {
+      Errors.saveError(res,ErrorsMessages.SERVER_ERROR)
+    }
+  }
+
   // async getCityByName(req, res) {
   //   const { body } = req;
   //   try {

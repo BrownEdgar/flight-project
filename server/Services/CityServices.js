@@ -24,6 +24,19 @@ class CityServices {
 
     return city.dataValues;
   }
+
+  async changeCity(body, params) {
+    const city = await this.models.city.update(
+      { name: body.name },
+      {
+        where: {
+          id: params.id,
+        },
+      },
+    );
+
+    return city.dataValues;
+  }
 }
 
 module.exports = CityServices;
