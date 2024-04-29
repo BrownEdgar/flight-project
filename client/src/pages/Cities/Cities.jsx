@@ -8,7 +8,10 @@ import './Cities.scss'
 export default function Cities() {
   const data = useLoaderData();
   const { isOpen, toggleModal } = useOutletContext()
-  console.log(data)
+  const handleDelete = (id) => {
+    axios.delete(import.meta.env.VITE_DB_URL + `/cities/${id}`)
+      .then(res => console.log(res))
+  }
   return (
     <div className='Cities'>
       <h1 className='Cities__title'>Cities</h1>
@@ -17,7 +20,7 @@ export default function Cities() {
           add City
         </button>
       </div>
-      <CTable data={data} />
+      <CTable data={data} handleDelete={handleDelete} />
     </div>
   )
 }

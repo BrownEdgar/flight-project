@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik'
 import './CityForm.scss'
 import axios from 'axios';
-import { useOutletContext } from 'react-router-dom';
+
 
 const initialValues = {
   name: '',
@@ -10,7 +10,7 @@ const initialValues = {
 }
 
 export default function CityForm({ toggleModal }) {
-  required
+
   const handleSubmit = (values, { resetForm }) => {
     const city = {
       ...values

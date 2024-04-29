@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './CityTable.scss'
 
-export default function CityTable({ data }) {
+export default function CityTable({ data, handleDelete }) {
   return (
     <div className='CityTable'>
       <table>
@@ -23,10 +23,10 @@ export default function CityTable({ data }) {
                 <td>{city.name}</td>
                 <td>{city.code}</td>
                 <td className='change'>
-                  <button className='btn btn__change'>change</button>
+                  <button className='btn btn__change'>change status</button>
                 </td>
                 <td className='delete'>
-                  <button className='btn btn__delete'>
+                  <button className='btn btn__delete' onClick={() => handleDelete(city.id)}>
                     <i className="bi bi-x-lg"></i>
                   </button>
                 </td>
