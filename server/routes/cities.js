@@ -7,6 +7,7 @@ const controller = new CityController()
 router.get("/", controller.getAllCities);
 router.post("/", controller.saveCity);
 router.patch("/:id", controller.changeCity);
+router.delete("/:id", controller.deleteCity);
 
 
 module.exports = router;

@@ -6,7 +6,7 @@ import Modal from '../components/Modal/Modal';
 import CityForm from '../components/CityForm/CityForm';
 
 export default function Root() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const toggleModal = () => setIsOpen(!isOpen)
   return (
     <div className='Root'>

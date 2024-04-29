@@ -11,7 +11,6 @@ export default function CityTable({ data, handleDelete }) {
             <th>N</th>
             <th>City</th>
             <th>Code</th>
-            <th>change</th>
             <th>delete</th>
           </tr>
         </thead>
@@ -22,9 +21,6 @@ export default function CityTable({ data, handleDelete }) {
                 <td>{city.id}</td>
                 <td>{city.name}</td>
                 <td>{city.code}</td>
-                <td className='change'>
-                  <button className='btn btn__change'>change status</button>
-                </td>
                 <td className='delete'>
                   <button className='btn btn__delete' onClick={() => handleDelete(city.id)}>
                     <i className="bi bi-x-lg"></i>

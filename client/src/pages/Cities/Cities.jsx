@@ -26,7 +26,6 @@ export default function Cities() {
 }
 
 export const citiesLoader = async () => {
-  console.log("111")
   const response = await axios(import.meta.env.VITE_DB_URL + '/cities');
   return response.data
 }

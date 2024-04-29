@@ -31,8 +31,8 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/cities", citiesRouter);
-app.use("/company", companyRouter);
-app.use("/flight", flightRouter);
+app.use("/companies", companyRouter);
+app.use("/flights", flightRouter);
 
 app.locals.models = {
   users: db.users,

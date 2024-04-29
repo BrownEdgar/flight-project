@@ -24,6 +24,11 @@ class CityServices {
 
     return city.dataValues;
   }
+  async deleteCity(id) {
+    console.log(1111)
+    const city = await this.models.city.destroy({ where: { id } })
+    return true
+  }
 
   async changeCity(body, params) {
     const city = await this.models.city.update(
