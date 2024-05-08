@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
 
-
 const sequelize = new Sequelize(
   process.env.SERVER_DB_URL,
   "root",
