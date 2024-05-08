@@ -12,7 +12,16 @@ class FlightController{
       res.status(201).json(flight);
     } catch (error) {
       Errors.saveError(res,ErrorsMessages.SERVER_ERROR)
+    }
+  }
 
+  async getFlightByCompany(req, res) {
+    const {company} = req.query
+    try {
+      const flight = await req.app.locals.services.flight.getFlightByCompany(company);
+      res.status(201).json(flight);
+    } catch (error) {
+      res.json(error)
     }
   }
 }
